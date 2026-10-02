@@ -80,7 +80,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenOrder }) => {
               {/* Main image container */}
               <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-[#E8DFD5] bg-[#EAE2D8] aspect-[16/10] sm:aspect-[16/11]">
                 <img
-                  src="/src/assets/images/hero_croissants_bakery_1790965917304.jpg"
+                  src="/images/hero_croissants_bakery.jpg"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.src.includes('hero_croissants_bakery_1790965917304')) {
+                      target.src = '/images/hero_croissants_bakery_1790965917304.jpg';
+                    }
+                  }}
                   alt="Croissants folhados dourados e brioche artesanal da Brioche Brasil"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center transform hover:scale-[1.02] transition-transform duration-700 ease-out"

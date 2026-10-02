@@ -30,7 +30,13 @@ export const EditorialSection: React.FC<EditorialSectionProps> = ({ onSelectCate
               <div className="absolute -inset-2 bg-gradient-to-br from-[#E2D2C2]/50 to-transparent rounded-3xl blur-lg -z-10" />
               <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-[#E0D2C4] aspect-[16/11]">
                 <img
-                  src="/src/assets/images/editorial_opera_cake_1790965966607.jpg"
+                  src="/images/editorial_opera_cake.jpg"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.src.includes('editorial_opera_cake_1790965966607')) {
+                      target.src = '/images/editorial_opera_cake_1790965966607.jpg';
+                    }
+                  }}
                   alt="Bolo Ópera artesanal da Brioche Brasil"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center transform hover:scale-[1.02] transition-transform duration-700 ease-out"

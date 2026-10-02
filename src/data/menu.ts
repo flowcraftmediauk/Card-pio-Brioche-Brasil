@@ -64,7 +64,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 'R$ 18',
     priceNumber: 18,
     featured: true,
-    image: '/src/assets/images/featured_pain_au_chocolat_1790965944377.jpg',
+    image: '/images/featured_pain_au_chocolat.jpg',
     description: 'Massa folhada francesa artesanal recheada com barras de chocolate meio amargo nobre.',
   },
   {
@@ -75,7 +75,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 'R$ 20',
     priceNumber: 20,
     featured: true,
-    image: '/src/assets/images/featured_croissant_amendoas_1790965931724.jpg',
+    image: '/images/featured_croissant_amendoas.jpg',
     description: 'Creme frangipane de amêndoas com cobertura farta de lâminas tostadas e açúcar de confeiteiro.',
   },
   {
@@ -283,7 +283,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 'R$ 22 (Individual)',
     priceNumber: 22,
     featured: true,
-    image: '/src/assets/images/featured_tarte_tatin_1790965956108.jpg',
+    image: '/images/featured_tarte_tatin.jpg',
     description: 'Clássica torta francesa invertida com maçãs caramelizadas em ponto perfeito e massa crocante.',
     variations: [
       { label: 'Individual', price: 'R$ 22', priceNumber: 22 },

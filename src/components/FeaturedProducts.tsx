@@ -67,6 +67,16 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
                   {product.image ? (
                     <img
                       src={product.image}
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (product.id === 'pain-au-chocolat' && !target.src.includes('1790965944377')) {
+                          target.src = '/images/featured_pain_au_chocolat_1790965944377.jpg';
+                        } else if (product.id === 'croissant-amendoas' && !target.src.includes('1790965931724')) {
+                          target.src = '/images/featured_croissant_amendoas_1790965931724.jpg';
+                        } else if (product.id === 'tarte-tatin' && !target.src.includes('1790965956108')) {
+                          target.src = '/images/featured_tarte_tatin_1790965956108.jpg';
+                        }
+                      }}
                       alt={product.name}
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
