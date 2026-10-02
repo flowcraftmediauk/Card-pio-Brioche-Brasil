@@ -1,0 +1,6 @@
+{
+  "name": "Brioche Brasil – Boulangerie",
+  "description": "Boulangerie e Pâtisserie artesanal em Perdizes, São Paulo. Folhados, viennoiserie, pães, quiches e confeitaria clássica francesa por Christophe Guillard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

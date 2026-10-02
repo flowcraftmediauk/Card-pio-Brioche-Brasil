@@ -1,0 +1,62 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile data",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "displayName": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "maxLength": 100 },
+        "photoURL": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["userId", "email"]
+    },
+    "Favorite": {
+      "title": "Favorite",
+      "description": "User saved favorite products",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "productId": { "type": "string", "maxLength": 100 },
+        "productName": { "type": "string", "maxLength": 120 },
+        "category": { "type": "string", "maxLength": 60 },
+        "price": { "type": "string", "maxLength": 40 },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["userId", "productId", "productName"]
+    },
+    "OrderRequest": {
+      "title": "OrderRequest",
+      "description": "Customer order or encomenda inquiry for bakery pickup",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "customerName": { "type": "string", "maxLength": 100 },
+        "customerPhone": { "type": "string", "maxLength": 30 },
+        "pickupDate": { "type": "string", "maxLength": 20 },
+        "pickupTime": { "type": "string", "maxLength": 20 },
+        "itemsSummary": { "type": "string", "maxLength": 5000 },
+        "notes": { "type": "string", "maxLength": 1000 },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "cancelled"] },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["userId", "customerName", "customerPhone", "itemsSummary", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "User profile store"
+    },
+    "/users/{userId}/favorites/{favId}": {
+      "schema": { "$ref": "#/entities/Favorite" },
+      "description": "User saved favorite bakery items"
+    },
+    "/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/OrderRequest" },
+      "description": "Customer order requests"
+    }
+  }
+}
